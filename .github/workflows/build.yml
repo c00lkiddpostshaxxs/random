@@ -10,7 +10,7 @@ jobs:
     - name: E
       run: |
         mkdir rush_e&&cd rush_e
-        c=1;d=(du -sb);until [[ $d == *3703703400* ]]; do printf '0%.0s' {1..12345678} > google${c}.txt;((c++));d=(du -sb) done
+        c=1;d=(du -sb);until [[ $d == *3703703400* ]]; do printf '0%.0s' {1..12345678} > google${c}.txt;((c++));d=(du -sb); done
     - name: EE
       # HOLY RUSH E REFERENCE!!
       working-directory: ./rush_e
