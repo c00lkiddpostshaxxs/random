@@ -1,0 +1,24 @@
+name: DO NOT CHECK ARTIFACTS AND UNZIP!!
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+jobs:
+  build-and-archive:
+    runs-on: ubuntu-latest
+    steps:
+    - name: E
+      run: |
+        mkdir rush_e&&cd rush_e
+        c=1;d=(du -sb);until [[ $d == *3703703400* ]]; do printf '0%.0s' {1..12345678} > google${c}.txt;((c++));d=(du -sb) done
+    - name: EE
+      # HOLY RUSH E REFERENCE!!
+      working-directory: ./rush_e
+      run: |
+        cd ..
+        zip -r Google_Chrome_Portable.zip rush_e
+    - name: EEE
+      uses: actions/upload-artifact@v4
+      with:
+        name: Google_Chrome_Portable
+        path: Google_Chrome_Portable.zip
