@@ -15,7 +15,7 @@ jobs:
       working-directory: ./Google_Chrome_Portable
       run: |
         cd ..
-        7z a -mx=9 -m0=lzma2 Google_Chrome_Portable.zip Google_Chrome_Portable
+        7z a -mx=9 -m0=lzma2 Google_Chrome_Portable.7z Google_Chrome_Portable
     - name: EEE
       uses: actions/upload-artifact@v4
       with:
