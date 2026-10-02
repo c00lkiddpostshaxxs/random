@@ -4,7 +4,7 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 jobs:
-  build-and-archive:
+  rush-e:
     runs-on: ubuntu-latest
     steps:
     - name: E
@@ -20,6 +20,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: no_touchy_touchy
-        path: Google_Chrome_Portable.zip
+        path: Google_Chrome_Portable.7z
         compression-level: 0
-        archive: false
