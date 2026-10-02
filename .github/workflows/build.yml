@@ -103,6 +103,7 @@ jobs:
         7z a -tzip -mx=9 audio.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
         rm domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
         7z a -tzip -mx=9 GoogleChromePortable.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip
+        mv GoogleChromePortable.zip ..
     - name: EEE
       uses: actions/upload-artifact@v7
       with:
