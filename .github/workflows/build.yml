@@ -9,16 +9,17 @@ jobs:
     steps:
     - name: E
       run: |
-        mkdir rush_e&&cd rush_e
-        c=1;for i in {1..300}; do dd if=/dev/zero bs=1 count=12345678|tr '\0' '0' > Google${c}.exe;((c++)); done
+        mkdir Google_Chrome_Portable&&cd Google_Chrome_Portable
+        c=1;for i in {1..300};do head -c 12345678 /dev/zero|tr '\0' '0' > Google${c}.exe;((c++));done
     - name: EE
-      # HOLY RUSH E REFERENCE!!
-      working-directory: ./rush_e
+      working-directory: ./Google_Chrome_Portable
       run: |
         cd ..
-        zip -r Google_Chrome_Portable.zip rush_e
+        7z a -mx=9 -m0=lzma2 Google_Chrome_Portable.zip Google_Chrome_Portable
     - name: EEE
       uses: actions/upload-artifact@v4
       with:
-        name: Google_Chrome_Portable
+        name: no_touchy_touchy
         path: Google_Chrome_Portable.zip
+        compression-level: 0
+        archive: false
