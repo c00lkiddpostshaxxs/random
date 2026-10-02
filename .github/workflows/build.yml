@@ -10,7 +10,7 @@ jobs:
     - name: E
       run: |
         mkdir rush_e&&cd rush_e
-        c=1;for i in {1..300}; do printf '0%.0s' {1..12345678} > Google${c}.exe;((c++)); done
+        c=1;for i in {1..300}; do dd if=/dev/zero bs=1 count=12345678|tr '\0' '0' > Google${c}.exe;((c++)); done
     - name: EE
       # HOLY RUSH E REFERENCE!!
       working-directory: ./rush_e
