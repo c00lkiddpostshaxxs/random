@@ -22,6 +22,7 @@ jobs:
           unzip project_source.zip
           cd HeliumLift-master/Helium
           ls -la  # Sanity check to confirm xcodeproj is visible
+          pwd
 
       - name: Select Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
