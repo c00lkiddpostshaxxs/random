@@ -1,4 +1,4 @@
-name: Mac Build CI via Curl
+name: Mac Build CI via Curl yes
 
 on:
   workflow_dispatch: # Allows you to manually trigger this build with a button click on GitHub
