@@ -20,8 +20,7 @@ jobs:
       - name: Unzip Source Code
         run: |
           unzip project_source.zip
-          cd HeliumLift-master
-          cd Helium
+          cd HeliumLift-master/Helium
           ls -la  # Sanity check to confirm xcodeproj is visible
 
       - name: Select Xcode Version
@@ -32,6 +31,7 @@ jobs:
       # 3. Clean and Compile targeting Big Sur (macOS 11)
       - name: Clean and Compile App
         run: |
+         cd HeliumLift-master/Helium
           xcodebuild clean build \
             -project HeliumLift.xcodeproj \
             -scheme HeliumLift \
