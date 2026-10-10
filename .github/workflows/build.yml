@@ -20,6 +20,7 @@ jobs:
       - name: Unzip Source Code
         run: |
           unzip project_source.zip
+          cd HeliumLift-master
           ls -la  # Sanity check to confirm xcodeproj is visible
 
       - name: Select Xcode Version
