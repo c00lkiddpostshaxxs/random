@@ -39,6 +39,7 @@ jobs:
             -configuration Release \
             MACOSX_DEPLOYMENT_TARGET=11.0 \
             CODE_SIGNING_ALLOWED=NO
+            CONFIGURATION_BUILD_DIR="$(pwd)/../.."
 
       # 4. Upload the compiled binary artifact (Fixed Syntax)
       - name: Upload Compiled Binary Artifact
