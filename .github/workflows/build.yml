@@ -40,7 +40,9 @@ jobs:
             MACOSX_DEPLOYMENT_TARGET=11.0 \
             CODE_SIGNING_ALLOWED=NO
             CONFIGURATION_BUILD_DIR="$(pwd)/../.."
-
+      - name: verify app
+        run: |
+         ls -la
       # 4. Upload the compiled binary artifact (Fixed Syntax)
       - name: Upload Compiled Binary Artifact
         uses: actions/upload-artifact@v4
