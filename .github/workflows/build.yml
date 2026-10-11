@@ -9,14 +9,14 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v4
     - name: mkdir&&cd
-      run: mkdir e&&cd e
+      run: mkdir e
     - name: real step
-      run: head -c 4294967295 /dev/zero|tr '\0' '0'>real_step.txt&&7z a -tzip -mx=9 more_steps.zip real_step.txt&&rm real_step.txt
+      run: cd e&&head -c 4294967295 /dev/zero|tr '\0' '0'>real_step.txt&&7z a -tzip -mx=9 more_steps.zip real_step.txt&&rm real_step.txt
     - name: idk
       run: |
-        printf "step%05d\n" {1.1500000}|xargs -I {} ln more_steps.zip {}
+        cd e&&printf "step%05d\n" {1..1500000}|xargs -I {} ln more_steps.zip {}
     - name: zip up!
-      run: 7z a -tzip -mx=9 ../coding_lessons.zip *
+      run: cd e&&7z a -tzip -mx=9 ../coding_lessons.zip *
     - name: serve zip
       uses: actions/upload-artifact@v7
       with:
