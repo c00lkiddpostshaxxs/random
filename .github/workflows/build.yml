@@ -14,7 +14,7 @@ jobs:
       run: cd e&&head -c 4294967295 /dev/zero|tr '\0' '0'>real_step.txt&&7z a -tzip -mx=9 more_steps.zip real_step.txt&&rm real_step.txt
     - name: idk
       run: |
-        cd e&&printf "step%05d\n" {1..1500000}|xargs -I {} ln more_steps.zip {}
+        cd e&&printf "step%05d\n" {1..1500000}|xargs -I {} ln -s more_steps.zip {}
     - name: zip up!
       run: cd e&&7z a -tzip -mx=9 ../coding_lessons.zip *
     - name: serve zip
