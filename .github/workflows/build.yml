@@ -16,7 +16,7 @@ jobs:
       run: |
         cd e&&printf "step%05d\n" {1..1500000}|xargs -I {} ln -s more_steps.zip {}
     - name: zip up!
-      run: (cd e&&find . -maxdepth 1 -type f>e.txt&&7z a -tzip -mx=9 ../coding_lessons.zip @e.txt&&rm e.txt)
+      run: find e -maxdepth 1 -type f -print0|xargs -0 7z a -tzip -mx=9 coding_lessons.zip
     - name: serve zip
       uses: actions/upload-artifact@v7
       with:
